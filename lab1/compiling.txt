@@ -1,0 +1,12 @@
+del *.o
+del child.exe
+del parent.exe
+
+gcc -c math_functions.c -o math_functions.o -Wall -O2
+gcc -c parent.c -o parent.o -Wall -O2
+gcc -c child.c -o child.o -Wall -O2
+
+gcc parent.o math_functions.o -o parent.exe
+gcc child.o math_functions.o -o child.exe
+
+parent.exe
